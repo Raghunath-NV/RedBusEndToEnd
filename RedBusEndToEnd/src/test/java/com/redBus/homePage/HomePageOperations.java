@@ -29,6 +29,7 @@ public class HomePageOperations {
 		Thread.sleep(2000);
 		int i=1;
 		while (true) {
+			Thread.sleep(1000);
 			String path="\"(//td[@class='monthTitle'])["+i+"]\"";
 			WebElement calendarMonthYear = driver.findElement(By.xpath(path));
 			WebElement monthNext = driver.findElement(By.xpath("//*[@id='rb-calendar_onward_cal']//td[@class='next']"));

@@ -1,12 +1,8 @@
 package com.redBus.TestCases;
 
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -34,12 +30,16 @@ public class HomePage {
 		//Select from suggested list
 		HomePageOperations.selectLocationFromList(driver, 0);
 		driver.findElement(By.id("dest")).sendKeys(dest);
+		
 		//Select from suggested list
 		HomePageOperations.selectLocationFromList(driver, 0);
+		
 		HomePageOperations.selectDate(driver, dateOfTravel);
-		JavascriptExecutor javascriptExecutor=(JavascriptExecutor) driver;
-		javascriptExecutor.executeScript("document.getElementById('onward_cal').value='"+dateOfTravel+"'");
+		
+		//JavascriptExecutor javascriptExecutor=(JavascriptExecutor) driver;
+		//javascriptExecutor.executeScript("document.getElementById('onward_cal').value='"+dateOfTravel+"'");
 		//driver.findElement(By.xpath("//label[text()='Onward Date']")).value=dateOfTravel;
+		
 		TakeScreenShots.getScreenshot(driver, "After Entering Data in Home Page");
 		driver.findElement(By.id("search_btn")).click();
 		TakeScreenShots.getScreenshot(driver, "Bus Search Page");
